@@ -62,22 +62,6 @@ function(declare, BaseWidget, Search, on, FeatureLayer, lang, QueryTask, query) 
 
     },
 
-    // _returnLotes: function (geoR)  {
-    //   // console.log(geoR)
-    //   var tabela = this.tabela
-    //   queryTask = new QueryTask("https://www.senocwb.com/senoportal/rest/services/Curitibatech/GeoCuritiba_MapaCadastral/MapServer/15");
-    //   query = new query();
-    //   query.geometry = geoR;
-    //   query.outSpatialReference = {wkid:31982};
-    //   queryTask.execute(query, lang.hitch(this, function (resp) {
-    //     console.log(resp, 'Lotes')
-    //     resp.features.forEach(element => {
-    //       let line = this.createLine(element);
-    //       tabela.appendChild(line);
-    //     });
-    //   }));
-    // },
-
     createLine: function(data){
       line = document.createElement("tr");
       tdId = document.createElement("td");
