@@ -21,11 +21,13 @@ function(declare, BaseWidget, Search, on, FeatureLayer, lang, QueryTask, query) 
 
         enableButtonMode: false, 
 
-        enableLabel: false,
-
-        enableInfoWindow: true,
-
         showInfoWindowOnSelect: false,
+
+        theme: 'arcgisSearch',
+
+        enableSearchingAll: false,
+
+        sources: []
 
     });
      
