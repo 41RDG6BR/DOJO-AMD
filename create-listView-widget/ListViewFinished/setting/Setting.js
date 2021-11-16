@@ -26,13 +26,14 @@ define([
 function(declare, BaseWidgetSetting, lang, array, _WidgetsInTemplateMixin, LayerInfos) {
 
   return declare([BaseWidgetSetting, _WidgetsInTemplateMixin], {
-    baseClass: 'jimu-widget-demo-setting',
+    baseClass: 'jimu-widget-listview-setting',
 
     postCreate: function(){
       //the config object is passed in
       // Get all feature layers from the map
       LayerInfos.getInstance(this.map, this.map.itemInfo)
       .then(lang.hitch(this, function(layerInfosObj) {
+        console.log(layerInfosObj);
         var infos = layerInfosObj.getLayerInfoArray();
         var options = [];
         array.forEach(infos, function(info) {
@@ -60,14 +61,12 @@ function(declare, BaseWidgetSetting, lang, array, _WidgetsInTemplateMixin, Layer
 
           this.setConfig(this.config);
         }));
-      }));
-      
+      }));     
     },
 
     setConfig: function(config){
       // Update header text
       this.headerTextNode.value = config.widgetHeaderText;
-
     },
 
     getConfig: function(){
